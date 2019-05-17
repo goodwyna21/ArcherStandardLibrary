@@ -7,11 +7,11 @@
     </head>
     <body>
         <h1><u>BinaryTree.h</u></h1>
-        <a href="../BinaryTree.h">Implementation</a>
+        <a href="../Source/BinaryTree.h">Implementation</a>
         <pre>
 +---------------------------------------------------------------+
 Provides a binary search tree struct which can store and quickly
-search elements. A binary tree is very quick at checking if it 
+search elements. A binary tree is very quick at checking if it
 contains a certain value, making it useful for many applications.
 Notably any duplicate elements are discarded.
 
@@ -36,7 +36,7 @@ vector&lt;T&gt; <b>collapse</b>()
 
 void <b>resize</b>()
     reorganizes the tree to more evenly distribute the elements,
-    this helps keep the height low, in turn making lookup times 
+    this helps keep the height low, in turn making lookup times
     more efficient. It is up to the user to determine when to
     resize the tree, usually based on calls to <b>height</b>()
 
@@ -51,8 +51,8 @@ string <b>toString</b>()
 
 
 <h2 style="display:inline">struct TreeNode:</h2>
-This file also contains a TreeNode struct used by the 
-binary Tree, but for most use cases this isn&#39;t necessary 
+This file also contains a TreeNode struct used by the
+binary Tree, but for most use cases this isn&#39;t necessary
 to interact with or know about.
 <h3 style="display:inline">constructor:</h3>
 <b>TreeNode</b>&lt;typename T&gt;(T obj)
@@ -60,7 +60,7 @@ to interact with or know about.
 <h3 style="display:inline">Methods:</h3>
 bool <b>attach</b>(T object)
     Appropriately attaches the object, or recursively passes
-    it down to this node&#39;s children. 
+    it down to this node&#39;s children.
     Returns false if object is a duplicate element in the tree.
 
 bool <b>has</b>(T object)
@@ -68,7 +68,7 @@ bool <b>has</b>(T object)
     object.
 
 vector&lt;T&gt; <b>collapse</b>()
-    returns a sorted vector of this node and it&#39;s 
+    returns a sorted vector of this node and it&#39;s
     children&#39;s values
 
 

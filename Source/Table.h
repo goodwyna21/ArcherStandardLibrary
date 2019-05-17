@@ -30,7 +30,7 @@ struct Table{
         offtxt=ANSITXT[WHITE];
         hlight=ANSIBKG[DEFAULT];
         txt=ANSITXT[DEFAULT];
-        fill=val;
+        fill=' ';
         dispWidth=0;
         dispHeight=0;
         align="left";
@@ -44,7 +44,7 @@ struct Table{
         addCols(width+1);
     }
     Table(string name="",size_t width=0,size_t height=0,string s=" | "){
-        init(name,width,height,val,s);}
+        init(name,width,height,s);}
     
     Tuple<size_t,2> execMenu(bool showHeaders=false,bool showBorder=true,bool hLight=true){
         size_t x=1,y=1;

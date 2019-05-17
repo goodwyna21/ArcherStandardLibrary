@@ -39,7 +39,7 @@ vector<string> charToStrVec(vector<char> vec){
     for(int i = 0; i < vec.size(); i++){ret.push_back(string(1,vec.at(i)));}
     return ret;
 }
-string toString(vector<vector<char> > vec,sep=""){
+string toString(vector<vector<char> > vec,string sep=""){
     string ret = "";
     for(int y = 0; y < vec.size(); y++){
         ret += toString(charToStrVec(vec.at(y)),sep) + "\n";

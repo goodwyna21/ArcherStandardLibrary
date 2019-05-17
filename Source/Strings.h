@@ -9,7 +9,7 @@ using namespace std;
  * ANSI escape codes
  */
 const string ANSIESC = "\33[";
-const string DEFAULT = ANSIESC+"0m";
+const string DEFALT = ANSIESC+"0m";
 const string FXUNDR = ANSIESC+"4m";
 const string NOUNDR = ANSIESC+"24m";
 enum ansiColor{BLACK,RED,GREEN,YELLOW,BLUE,MAGENTA,CYAN,WHITE,DEFAULT};

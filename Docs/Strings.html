@@ -7,11 +7,11 @@
     </head>
     <body>
         <h1><u>Strings.h</u></h1>
-        <a href="../Strings.h">Implementation</a>
+        <a href="../Source/Strings.h">Implementation</a>
         <pre>
 +---------------------------------------------------------------+
 Provides generic functions for handling strings and converting
-other types to strings. 
+other types to strings.
 Also contains the mlstring (multi-line string) struct, which is
 used for operating on large strings.
 
@@ -31,12 +31,12 @@ string ANSITXT[9] and string ANSIBKG[9]:
 <h3 style="display:inline">functions:</h3>
 size_t <b>psize</b>(string)
     returns number of printible characters in string
-    Useful for formatting output when multiple lines should 
-    be equally long, but you don't want to count newlines or 
+    Useful for formatting output when multiple lines should
+    be equally long, but you don't want to count newlines or
     ansi escape codes like colors.
 
 string <b>pad</b>(string&/char*, int Width, char Fill=&#39; &#39;, string align=&quot;left&quot;)
-    adds &#39;Fill&#39; to the string until it is &#39;Width&#39 
+    adds &#39;Fill&#39; to the string until it is &#39;Width&#39
     characters long
 
 mlstring <b>pad</b>(mlstring&amp;, int Width=-1, char Fill=&#39; &#39, string align=&quot;left&quot;)
@@ -84,7 +84,7 @@ string&amp; <b>operator[n]</b>
 
 mlstring& <b>operator+= string/char</b>
     Appends text to the string, handles newlines
-    returns a reference to itself so you can chain 
+    returns a reference to itself so you can chain
     operators like &QUOT;VARNAME += a += b&QUOT;
 
 size_t <b>size</b>()

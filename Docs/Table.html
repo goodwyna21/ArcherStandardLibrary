@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1><u>Table.h</u></h1>
-        <a href="../Table.h">Implementation</a>
+        <a href="../Source/Table.h">Implementation</a>
         <pre>
 +---------------------------------------------------------------+
 Table.h provides a class for outputting data in a properly
@@ -49,7 +49,7 @@ Tuple&lt;size_t,2&gt; <b>execMenu</b>(showHeaders=false,
 
 void <b>Set</b>(x, y, string)</b>
     sets the value of (x,y) in the table to string.
-    Throws runTime error: Cannot set cell if (x,y) 
+    Throws runTime error: Cannot set cell if (x,y)
     is out of range.
 
 string <b>get</b>(x,y)
@@ -65,11 +65,11 @@ mlstring <b>toString</b>(showHeaders=false,showBorder=true,
     (see <a href="String.html">Strings.h</a> for mlstring)
     returns a multi-line string of the formatted table.
     showHeaders- only display row/collumn 0 (headers) if true
-    showBorder - adds border if true (title will not be 
+    showBorder - adds border if true (title will not be
                  shown without border)
     highlight  - enables alternating highlighting of lines
     selX/selY  - generally not used except internally for
-                 executing the menu. If either aren't -1, 
+                 executing the menu. If either aren't -1,
                  highlighting is disabled and cell(x,y) will
                  be highlighted instead.
 
