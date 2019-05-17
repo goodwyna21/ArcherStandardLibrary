@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Vectors.h</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><u>Vectors.h</u></h1>
+        <a href=".,/Vectors.h">Implementation</a><br>
+        <pre style="display:inline">
++---------------------------------------------------------------+
+Provides miscellaneous vector functions
+
+Also includes:
+&lt;vector&gt;
+&lt;cmath&gt;
+
+<h3 style="display:inline">functions:</h3>
+size_t <b>find</b>&lt;typename T&gt;(vector&lt;T&gt;, T element)
+    return index of element in vector of type T
+    returns string::npos (-1) if not found
+
+void <b>sortVec</b>(vector&lt;string&gt;&amp;)
+    sorts vector of strings alphabetically;
+
+[double/int/size_t] <b>sum</b>(vector&lt;[double/int/size_t]&gt;)
+    returns sum of elements in vector
+
+string <b>toString</b>(vector&lt;[string/int]&gt;, sep=&quot;\n&quot;)
+    return string of elements in vector, separated by sep
+
+string <b>toString</b>(vector&lt;vector&lt;char&gt; &gt;, sep=&quot;&quot;)
+    converts 2d vector of characters to a string
+
+vector&lt;string&gt; <b>charToStrVec</b>(vector&lt;char&gt;)
+    converts a vector of characters to a vector of strings
+
+vector&lt;string&gt; <b>toVecOfStr</b>(vector&lt;[double/int/size_t]&gt;)
+    converts vector of numbers to vector of strings
+
+<a href="../Documentation.html">Contents</a>
+    </pre>
+    </body>
+</html>

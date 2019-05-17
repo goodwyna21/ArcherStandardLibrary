@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DataStructures.h</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><u>DataStructures.h</u></h1>
+        <a href="../DataStructures.h">Implementation</a>
+        <pre>
++---------------------------------------------------------------+
+Umbrella header for multiple data structures
+
+Also includes:
+<a href="HashTable.html">HashTable.h</a>
+<a href="BinaryTree.html">BinaryTree.h</a>
+
+<h2 style="display:inline">struct Tuple:</h2>
+<h3 style="display:inline">constructor:</h3>
+<b>Tuple</b>&lt;typename T,size_t size=2&gt;()
+<b>Tuple</b>&lt;typename T,size_t size=2&gt;(T, T)
+
+<h3 style="display:inline">Methods:</h3>
+T&amp; <b>operator[n]</b>
+    returns a reference to element at index n
+
+bool <b>operator== Tuple&lt;T,size&gt;</b>
+    returns true if both tuples have identical elements
+    usage: &quot;tuple1 == tuple2&quot;
+    
+bool <b>operator== Tuple&lt;T,size&gt;</b>
+    returns inverse of above
+
+<a href="../Documentation.html">Contents</a>
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ArcherStandard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><u>Archer&#39;s Standard Library</u></h1>
+        <pre>
+<h2 style="display:inline">Include Structure:</h2>
++---------------------------------------------------------------+
+|                 (All.h)                                       |
+|                 <font color="red">/     \</font>                                       |
+|         <a href="Docs/Maths.html">(Maths.h)</a>     <a href="Docs/Table.html">(Table.h)</a> <font color="red">-&gt;</font> <a href="Docs/Debugging.html">(Debugging.h)</a> <font color="red">-&gt;</font> &lt;iostream&gt;|
+|                       <font color="red">/       \</font>                               |
+|               <a href="Docs/Getch.html">(Getch.h)</a>       <a href="Docs/Strings.html">(Strings.h)</a>                     |
+|                   <font color="red">/                \</font>                          |
+|&lt;sstream&gt; <font color="red">&lt;-</font> <a href="Docs/Exceptions.html">(Exceptions.h)</a>  <a href="Docs/DataStructures.html">(DataStructures.h)</a>                |
+|             <font color="red">/               /                \</font>                |
+|       &lt;termio.h&gt;      <a href="Docs/HashTable.html">(HashTable.h)</a>       <a href="Docs/BinaryTree.html">(BinaryTree.h)</a>      |
+|                       <font color="red">/           \             \</font>             |
+|                 &lt;algorithm&gt;    &lt;string&gt;    <a href="Docs/Vectors.html">(Vectors.h)</a>        |
+|                                            <font color="red">/         \</font>        |
+|                                       &lt;vector&gt;     &lt;cmath&gt;    |
++---------------------------------------------------------------+
+Including the same file twice will give you a linker error, so be
+careful to not include any file below another you've already 
+included. In addition, don't include any libraries (&lt;something&gt;)
+if it is included by something else you've already included.
+
+For example, you don't need to include &lt;iostream&gt; if you
+include Table.h, since it imports Debugging.h which in turn
+includes &lt;iostream&gt;.
+
+To avoid any issues and to have access to the entire library,
+simply include ArcherStandard.all.h, and be sure to not include
+any of the following:
+
+<b>&lt;iostream&gt;  &lt;sstream&gt;
+&lt;termio.h&gt;  &lt;algorithm&gt;
+&lt;string&gt;    &lt;vector&gt;
+&lt;cmath&gt;</b>
+
+Don't worry, you can still use their contents.
+
+If you only need access to a specific part of the library, you 
+can include just that file. Each file below it in the Diagram
+will also be included.
+        </pre>
+    </body>
+</html>

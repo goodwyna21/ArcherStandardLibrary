@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table.h</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><u>Table.h</u></h1>
+        <a href="../Table.h">Implementation</a>
+        <pre>
++---------------------------------------------------------------+
+Table.h provides a class for outputting data in a properly
+formatted table, while abstracting away the string handling.
+In addition, Tables can be used as menus from which a user can
+select an item.
+
+Also includes:
+<a href="Strings.html">Strings.h</a>
+<a href="Getch.html">Getch.h</a>
+<a href="Debugging.html">Debugging.h</a>
+
+<h3 style="display:inline">Constructor:</h3>
+<b>Table</b>(name=&quot;&quot;, width=0, height=0, seperator=&quot; | &quot;)
+
+<h3 style="display:inline">Methods:</h3>
+void <b>Add</b>(...)
+     - Add(vector&lt;string&gt;)
+     - Add(size, string[])
+     - Add(string, string)
+     - Add(string, int/double/size_t)
+    Appends a new row to the table.
+    If you want more fine access to the table, it's just stored
+    as a vector of vectors of strings called cells, and you can
+    operate however you choose on that.
+
+void <b>show</b>(showHeaders=false,showBorder=true,
+              highlight=true,selX=-1,selY=-1)
+    directly outputs toString(), and has identical arguments
+    Used just for simplifying code.
+
+Tuple&lt;size_t,2&gt; <b>execMenu</b>(showHeaders=false,
+                             showBorder=true,
+                             hightlight=true)
+    (see <a href="DataStructures.html">DataStructures.h</a> for Tuple)
+    Begins a loop where the user can traverse the table with
+    H,J,K,L keys (as in VIM) and select a cell.
+    Returns a tuple like (x,y) of the selected cell.
+
+void <b>Set</b>(x, y, string)</b>
+    sets the value of (x,y) in the table to string.
+    Throws runTime error: Cannot set cell if (x,y) 
+    is out of range.
+
+string <b>get</b>(x,y)
+    Returns value of cell (x,y)
+
+string <b>operator(x,y)</b>
+    Returns value of cell (x,y)
+    Synonymous with get(x,y)
+    Called like &QUOT;TABLENAME(x,y)&QUOT;
+
+mlstring <b>toString</b>(showHeaders=false,showBorder=true,
+                      highlight=true,selX=-1,selY=-1)
+    (see <a href="String.html">Strings.h</a> for mlstring)
+    returns a multi-line string of the formatted table.
+    showHeaders- only display row/collumn 0 (headers) if true
+    showBorder - adds border if true (title will not be 
+                 shown without border)
+    highlight  - enables alternating highlighting of lines
+    selX/selY  - generally not used except internally for
+                 executing the menu. If either aren't -1, 
+                 highlighting is disabled and cell(x,y) will
+                 be highlighted instead.
+
+void <b>clear</b>()
+    resets table to all defaults
+
+<a href="../Documentation.html">Contents</a>
+        </pre>
+    </body>
+</html>

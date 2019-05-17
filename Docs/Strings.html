@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strings.h</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><u>Strings.h</u></h1>
+        <a href="../Strings.h">Implementation</a>
+        <pre>
++---------------------------------------------------------------+
+Provides generic functions for handling strings and converting
+other types to strings. 
+Also contains the mlstring (multi-line string) struct, which is
+used for operating on large strings.
+
+Also includes:
+<a href="DataStructures.html">DataStructures.h</a>
+
+<h3 style="display:inline">constants:</h3>
+string ANSIESC:
+    ansi escape sequence (&quot;\33[&quot;)
+enum ansiColor:
+    {BLACK,RED,GREEN,YELLOW,BLUE,MAGENTA,CYAN,WHITE,DEFAULT}
+    PURPLE=MAGENTA
+string ANSITXT[9] and string ANSIBKG[9]:
+    Array of color codes for corresponding colors, take
+    ansiColor as index
+
+<h3 style="display:inline">functions:</h3>
+size_t <b>psize</b>(string)
+    returns number of printible characters in string
+    Useful for formatting output when multiple lines should 
+    be equally long, but you don't want to count newlines or 
+    ansi escape codes like colors.
+
+string <b>pad</b>(string&/char*, int Width, char Fill=&#39; &#39;, string align=&quot;left&quot;)
+    adds &#39;Fill&#39; to the string until it is &#39;Width&#39 
+    characters long
+
+mlstring <b>pad</b>(mlstring&amp;, int Width=-1, char Fill=&#39; &#39, string align=&quot;left&quot;)
+    pads each line of mlstring, otherwise synonymous with above.
+
+mlstring <b>align</b>(mlstring a,mlstring b,
+                      sep=&quot;&quot;,style=&quot;horizontal&quot;)
+    Aligns two mlstrings in a certain style
+     - horizontal: placed next to each other like &#39;a[i]+sep+b[i]&#39;
+     - vertical:   b is appended to a
+
+string <b>setColor</b>/<b>setHighlight</b> (string, ansiColor)
+    returns string with corresponding color codes applied
+
+string <b>toLower</b>(string&amp;/char*)
+    converts all uppercase letters to lowercase
+
+mlstring <b>addBorder</b>(mlstring,title=&quot;&quot;)
+    Adds a border to mlstring. Example:
+    +----+    +-----+
+    |text| or |title|
+    +----+    +---------+
+              |some text|
+              +---------+
+
+string <b>addBorder</b>(string/char*, title=&quot;&quot;)
+    Same as above, but only for a single line of text.
+
+string <b>niceDeci</b>(double)
+    truncates double to 2 decimal places, then rounds .99 up
+    and removes .00's.
+
+<h2 style="display:inline">struct mlstring:</h2>
+<h3 style="display:inline">constructor:</h3>
+<b>mlstring</b>(text="")
+
+<h3 style="display:inline">Methods:</h3>
+string&amp; <b>at</b>(n)
+    Return reference to line n
+
+string&amp; <b>operator[n]</b>
+    Return reference to line n
+    Synonymous with at(n)
+    Called like &QUOT;VARNAME[n]&QUOT;
+
+mlstring& <b>operator+= string/char</b>
+    Appends text to the string, handles newlines
+    returns a reference to itself so you can chain 
+    operators like &QUOT;VARNAME += a += b&QUOT;
+
+size_t <b>size</b>()
+    returns number of lines
+
+size_t <b>maxWidth</b>()
+    returns the largest width among all lines
+
+string <b>toString</b>(seperator=&quot;\n&quot;)
+    returns a formatted string of all lines
+
+bool <b>in</b>(string&amp;)
+    used for looping through lines in a for loop
+    returns false when end of lines is reached
+    example: for(string i;VARNAME.in(i);){...}
+
+<a href="../Documentation.html">Contents</a>
+        </pre>
+    </body>
+</html>
