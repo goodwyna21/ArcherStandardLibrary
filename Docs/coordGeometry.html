@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>coordGeometry.h</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1><u>coordGeometry.h</u></h1>
+        <a href="../Source/coordGeometry.h">Implementation</a>
+        <pre>
++---------------------------------------------------------------+
+Provides 'Vec' (vector) and 'coordPlane' classes for use in
+coordinate geometry.
+
+also includes:
+&lt;vector&gt;
+&lt;cmath&gt;
+&lt;initializer_list&gt;
+
+<h3 style="display:inline">Data types:</h3>
+uint = unsigned int
+
+<h2 style="display:inline">struct Vec:</h2>
+<h3 style="display:inline">constructors:</h3>
+(by default, values are initialized to 0)
+<b>Vec</b>(dimension=0)
+<b>Vec</b>(dimension=0, double values[])
+<b>Vec</b>(vector&lt;double&gt;&amp; values)
+<b>Vec</b>(Vec&amp; v)
+<b>Vec</b>(initalizer_list&lt;double&gt;&amp; values)
+  - ex. &quot;Vec v = {a,b...};&quot;
+
+<h3 style="display:inline">members:</h3>
+uint Dimension
+vector&lt;double&gt; coords
+
+<h3 style="display:inline">methods:</h3>
+Vec * <b>clonePntr</b>()
+    returns a pointer to a copy of this object
+
+Vec <b>clone</b>()
+    returns a copy of this object
+
+string <b>toString</b>(string space=&quot;&quot;)
+    returns a string representation of this
+
+operator <b>vector&lt;double&gt;</b>()
+    implicit conversion to vector of coordinates
+
+double&amp; <b>operator[]</b>(uint index)
+    return a reference to the coordinate at index
+
+double <b>dist</b>(Vec&amp; v)
+    returns distance to v
+double <b>distSquared</b>(Vec&amp; v)
+    returns distance to v squared
+    (more accurate/efficient than <b>dist</b>)
+
+double <b>norm</b>()
+    returns this vector&#39;s norm (length)
+double <b>normSquared</b>()
+    returns this vector&#39;s norm (length) squared
+    (more accurate/efficient than <b>norm</b>)
+
+double <b>angleTo</b>(Vec&amp; v)
+    returns the angle formed by this vector and v (radians)
+
+double <b>dot</b>(Vec&amp; v)
+    returns the dot product of this vector and v
+
+<h3 style="display:inline">vector operations:</h3>
+('a' and 'b' are Vec objects with equal dimension)
+<b>(a+=b)</b> or <b>(a+b)</b>          :  vector addition
+<b>(a-=b)</b> or <b>(a-b)</b>          :  vector subtraction
+<b>(a*=n)</b> or <b>(a*n)</b> or <b>(n*a)</b> :  scalar multiplication
+
+
+<h2 style="display:inline">struct coordPlane:</h2>
+<h3 style="display:inline">constructors:</h3>
+<b>coordPlane</b>(symbol=&quot;&quot;)
+<b>coordPlane</b>(Vec origin, Vec ĵ, Vec k̂, symbol=&quot;&quot;)
+    origin: 3d position of &#12296;0,0&#12297;
+    ĵ:      horizontal unit vector (from origin to &#12296;1,0&#12297;)
+    k̂:      vertical unit vector (from origin to &#12296;0,1&#12297;)
+    symbol: label
+
+<h3 style="display:inline">members:</h3>
+Vec j, k, origin
+string sym
+
+<h3 style="display:inline">methods:</h3>
+Vec <b>toRealSpace</b>(Vec v)
+    returns the 3d position of 2d vector v on this plane
+Vec <b>operator()</b>(uint x, uint y)
+    returns the 3d position of &#12296;x,y&#12297 on this plane
+
+<a href="../Documentation.html">Contents</a>
+        </pre>
+    </body>
+</html>

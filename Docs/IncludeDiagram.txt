@@ -1,0 +1,17 @@
++---------------------------------------------------------------+
+|                 (All.h)                                       |
+[                 /     \                                       ]
+|         (Maths.h)     (Table.h) -> (Debugging.h) -> <iostream>|
+[                       /       \                               ]
+|               (Getch.h)       (Strings.h)                     |
+[                   /                \                          ]
+|<sstream> <- (Exceptions.h)  (DataStructures.h)                |
+[             /               /                \                ]
+|       <termio.h>      (HashTable.h)     (BinaryTree.h)        |
+[                       /           \            \              ]
+|                 <algorithm>    <string>     (Vectors.h)       |
+[                                                  \            ]
+|                     <initializer_list> <- (coordGeometry.h)   |
+[                                           /               \   ]
+|                                       <vector>         <cmath>|
++---------------------------------------------------------------+

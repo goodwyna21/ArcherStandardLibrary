@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/newmain.o
+	${OBJECTDIR}/_ext/957bd1db/libraryMain.o
 
 
 # C Compiler Flags
@@ -64,10 +64,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libarcherstandard.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libarcherstandard.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libarcherstandard.a
 
-${OBJECTDIR}/newmain.o: newmain.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/957bd1db/libraryMain.o: ../../Source/libraryMain.cpp
+	${MKDIR} -p ${OBJECTDIR}/_ext/957bd1db
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/newmain.o newmain.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/957bd1db/libraryMain.o ../../Source/libraryMain.cpp
 
 # Subprojects
 .build-subprojects:

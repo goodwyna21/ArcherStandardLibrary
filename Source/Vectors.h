@@ -1,8 +1,7 @@
 #ifndef VECTORS_H
 #define VECTORS_H
 
-#include <vector>
-#include <cmath>
+#include "coordGeometry.h";
 using namespace std;
 
 template <typename T>

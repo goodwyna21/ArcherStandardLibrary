@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>../../Source/Image.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,7 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>newmain.cpp</itemPath>
+      <itemPath>../../Source/libraryMain.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFolder"
                    displayName="SourceFolder"
@@ -28,6 +29,7 @@
       <itemPath>SourceFolder/Table.h</itemPath>
       <itemPath>SourceFolder/Vectors.h</itemPath>
       <itemPath>SourceFolder/all.h</itemPath>
+      <itemPath>SourceFolder/coordGeometry.h</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -53,9 +55,16 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <commandLine>-std=c++11</commandLine>
+        </ccTool>
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="../../Source/Image.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../../Source/libraryMain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="SourceFolder/BinaryTree.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SourceFolder/DataStructures.h" ex="false" tool="3" flavor2="0">
@@ -78,7 +87,7 @@
       </item>
       <item path="SourceFolder/all.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="newmain.cpp" ex="false" tool="1" flavor2="0">
+      <item path="SourceFolder/coordGeometry.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="3">
@@ -103,6 +112,10 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="../../Source/Image.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../../Source/libraryMain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="SourceFolder/BinaryTree.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SourceFolder/DataStructures.h" ex="false" tool="3" flavor2="0">
@@ -125,7 +138,7 @@
       </item>
       <item path="SourceFolder/all.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="newmain.cpp" ex="false" tool="1" flavor2="0">
+      <item path="SourceFolder/coordGeometry.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
