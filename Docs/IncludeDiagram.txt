@@ -1,7 +1,7 @@
 +---------------------------------------------------------------+
-|                 (All.h)                                       |
+|                 (All.h) -> (Debugging.h) -> <stdio.h>         |
 [                 /     \                                       ]
-|         (Maths.h)     (Table.h) -> (Debugging.h) -> <iostream>|
+|         (Maths.h)     (Table.h) -> <iostream>                 |
 [                       /       \                               ]
 |               (Getch.h)       (Strings.h)                     |
 [                   /                \                          ]

@@ -6,17 +6,28 @@ using namespace std;
 /*
  * Breakpoints for debugging
  */
-int BKPCNT=1;
-void bp(string msg=""){           
-    cout << "\n------------\nBreakpoint " << BKPCNT << ((msg.size()==0?"":"\n"+msg)) << "\n------------\n";
-    cin.get();
-    BKPCNT++;}
-void bp(const char* msg){bp(string(msg));}
-void bp(bool b){bp(b?"true":"false");}
-void bp(int n){bp(to_string(n));}
-void bp(double n){bp(to_string(n));}
-void bp(char c){bp(string(1,c));}
-void bp(size_t n){bp((int)n);}
+
+struct bkpnts{
+    static unsigned int BKPCNT;
+    ostream os;
+    istream is;
+    bkpnts(ostream& out=cout,istream& in=cin) : os(out.rdbuf()), is(in.rdbuf()) {}
+    ~bkpnts(){}
+    string operator() (string msg=""){
+        os << "\n------------\nBreakpoint " << BKPCNT << ((msg.size()==0?"":"\n"+msg)) << "\n------------\n";
+        BKPCNT++;
+        return to_string(is.get());
+    }
+    string operator() (const char* msg){return (*this)(string(msg));}
+    string operator() (bool b){return (*this)(b?"true":"false");}
+    string operator() (int n){return (*this)(to_string(n));}
+    string operator() (double n){return (*this)(to_string(n));}
+    string operator() (char c){return (*this)(string(1,c));}
+    string operator() (size_t n){return (*this)((int)n);}
+    string operator() (unsigned int n){return (*this)((int)n);}
+};
+unsigned int bkpnts::BKPCNT = 1;
+bkpnts bp;
 
 #endif /* DEBUGGING_H */
 

@@ -3,7 +3,6 @@
 
 #include "Strings.h"
 #include "Getch.h"
-#include "Debugging.h"
 
 /*
  * Nicely formatted table for output
@@ -24,7 +23,8 @@ struct Table{
     size_t cols;
     size_t dispWidth;
     size_t dispHeight;
-    void init(string name="",size_t width=0,size_t height=0,string s=" | "){
+    ostream * os;
+    void init(ostream& stream,string name="",size_t width=0,size_t height=0,string s=" | "){
         title=name;
         offhlight=ANSIBKG[BLACK];
         offtxt=ANSITXT[WHITE];
@@ -39,12 +39,13 @@ struct Table{
         sep=s;
         rows=0;
         cols=1;
+        os = &stream;
         addRows(height+1);
         cols=0;
         addCols(width+1);
     }
-    Table(string name="",size_t width=0,size_t height=0,string s=" | "){
-        init(name,width,height,s);}
+    Table(ostream& stream,string name="",size_t width=0,size_t height=0,string s=" | "){
+        init(stream,name,width,height,s);}
     
     Tuple<size_t,2> execMenu(bool showHeaders=false,bool showBorder=true,bool hLight=true){
         size_t x=1,y=1;
@@ -52,28 +53,28 @@ struct Table{
         do{
             if(c!=' '){
                 for(int k = 0; k < dispHeight; k++){
-                    cout << "\x1b[A";
+                    (*os) << "\x1b[A";
                     for(int i = 0; i < dispWidth; i++){
-                        cout << "\b \b";
+                        (*os) << "\b \b";
                     }
                 }
             }
             switch((int)c){
                 case 104: //h, left
                     if(x!=1)x--;
-                    else cout << "\a";
+                    else (*os) << "\a";
                     break;
                 case 106: //j, down
                     if(y!=rows-1)y++;
-                    else cout << "\a";
+                    else (*os) << "\a";
                     break;
                 case 107: //k, up
                     if(y!=1)y--;
-                    else cout << "\a";
+                    else (*os) << "\a";
                     break;
                 case 108: //l, right
                     if(x!=cols-1)x++;
-                    else cout << "\a";
+                    else (*os) << "\a";
                     break;
             }
             show(showHeaders,showBorder,hLight,x,y);
@@ -81,8 +82,7 @@ struct Table{
         return Tuple<size_t,2>(x,y);
     }
     void show(bool showHeaders=false,bool showBorder=true,bool hLight=true,size_t selX=-1,size_t selY=-1){
-        mlstring s = toString(showHeaders,showBorder,hLight,selX,selY);
-        cout << s.toString() << "\n";
+        (*os) << toString(showHeaders,showBorder,hLight,selX,selY).toString() << "\n";
     }
     mlstring toString(bool showHeaders=false,bool showBorder=true,bool hLight=true,int selX=-1,int selY=-1){
         string tmp;
@@ -178,7 +178,7 @@ struct Table{
         return get(x,y);
     }
     void clear(){
-        init();
+        init(*os);
     }
     void operator= (Table t){
         cells = t.cells;

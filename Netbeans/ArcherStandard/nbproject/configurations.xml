@@ -56,7 +56,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <commandLine>-std=c++11</commandLine>
+          <commandLine>-std=c++11 -stdlib=libc++</commandLine>
         </ccTool>
         <archiverTool>
         </archiverTool>

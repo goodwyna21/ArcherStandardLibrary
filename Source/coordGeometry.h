@@ -7,6 +7,8 @@
 using namespace std;
 #define uint unsigned int
 
+#include "Debugging.h"
+
 struct Vec{ //Mathematical vector
     uint Dimension;
     vector<double> coords;
@@ -21,35 +23,36 @@ struct Vec{ //Mathematical vector
         for(uint i = 0; i < Dimension; i++){
             coords.at(i)=(vals[i]);
         }
-        delete vals;
     }
     
-    void _checkDim(Vec& v){
+    void _checkDim(Vec v){
         if(v.Dimension!=Dimension){
             throw logic_error("Error: Invalid operation between a Vec of dimension " 
                   + to_string(Dimension)+" and Vec of dimension "+to_string(v.Dimension));} }
-
+    ~Vec(){}
+    Vec(){}
     //constructors
-    Vec(const uint d=0){
-        _defaultInitialize(d);
-    }
     Vec(uint d, double vals[]){
         _arrayInitialize(d,vals);
     }
-    Vec(const initializer_list<double>& vals){ //inline array initialization
-        size_t d = vals.size();
-        double arr[d];
-        uint i = 0;
-        for(double n : vals){
-            arr[i]=n;
-            i++;
-        }
-        _arrayInitialize(d,arr);
+    Vec(initializer_list<double> vals){ //inline array initialization
+        vector<double> v(vals.begin(),vals.end());
+        _arrayInitialize(v.size(),&v[0]);
     }
-    Vec(const vector<double>& vals){
+    Vec(vector<double> vals){
         _arrayInitialize(vals.size(),&vals[0]);
     }
     Vec(Vec& v){(*this)=(v);}
+    Vec(Vec a, Vec b){(*this)=(b-a);}
+    
+    Vec(double a, double b){
+        double arr[] = {a,b};
+        _arrayInitialize(2,arr);
+    }
+    Vec(double a, double b, double c){
+        double arr[] = {a,b,c};
+        _arrayInitialize(3,arr);
+    }
     
     //methods
     Vec * clonePntr(){
@@ -61,7 +64,6 @@ struct Vec{ //Mathematical vector
         delete ptr;
         return ret;
     }
-    
     operator vector<double>() {
         return coords;
     }
@@ -70,6 +72,15 @@ struct Vec{ //Mathematical vector
     double& operator[] (const uint n){
         return coords.at(n);
     }
+    Vec& setNorm(double n){
+        double len = norm();
+        for(uint i = 0; i < Dimension; i++){
+            coords[i] *= (n/len);
+        }
+        return *this;
+    }
+    Vec& stretch(double n){return setNorm(n);}
+    
     Vec& operator+= (Vec v){ //vector addition
         _checkDim(v);
         for(uint i = 0; i < Dimension; i++){
@@ -103,6 +114,17 @@ struct Vec{ //Mathematical vector
         ret*=n;
         return ret;
     }
+    Vec& operator/= (double n){ //scalar division
+        for(uint i = 0; i < Dimension; i++){
+            coords.at(i)/=n;
+        }
+        return *this;
+    }
+    Vec operator/ (double n){
+        Vec ret = clone();
+        ret/=n;
+        return ret;
+    }
     double dot(Vec v){
         _checkDim(v);
         double sum = 0;
@@ -113,15 +135,10 @@ struct Vec{ //Mathematical vector
     }        
     //geometry
     double distSquared(Vec& v){
-        _checkDim(v);
-        uint sum=0;
-        for(uint i = 0; i < Dimension; i++){
-            sum+= pow(coords.at(i) - v[i],2);
-        }
-        return sum;
+        return ((*this)-v).normSquared();
     }
     double dist(Vec& v){
-        return sqrt(distSquared(v));
+        return ((*this)-v).norm();
     }
     double normSquared(){
         double sum=0;
@@ -150,7 +167,7 @@ struct Vec{ //Mathematical vector
         return ret + "\u3009";
     }
 };
-Vec operator* (double n, Vec& v){
+Vec operator* (double n, Vec v){
     return v*n;
 }
 
@@ -161,21 +178,21 @@ struct coordPlane{
     string sym;
     
     coordPlane(string s=""){
-        j=Vec(3);
-        k=Vec(3);
-        origin=Vec(3);
+        j=Vec({0,0,0});
+        k=Vec({0,0,0});
+        origin=Vec({0,0,0});
         sym=s;
     }
     
     coordPlane(Vec O, Vec Ĵ, Vec K, string s=""){
-        Ĵ._checkDim(K);
-        O._checkDim(Ĵ);
-        if(O.Dimension!=3){
+        if(O.Dimension!=3 || 
+           Ĵ.Dimension!=3 ||
+           K.Dimension!=3){
             throw logic_error("Error: cannot initialize 2d coordinate plane with Vec of dimension " 
                   + to_string(O.Dimension));}
         origin=O;
         j = Ĵ;
-        j = K;
+        k = K;
         sym=s;
     }
 
@@ -188,7 +205,9 @@ struct coordPlane{
         _checkTwoD(v);
         return ((j*v[0])+(k*v[1])+origin);
     }
-    
+    Vec operator() (Vec v){
+        return toRealSpace(v);
+    }
     Vec operator() (double x, double y){
         return toRealSpace(Vec({x,y}));
     }
