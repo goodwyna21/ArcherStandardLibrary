@@ -16,7 +16,6 @@ enum ansiColor{BLACK,RED,GREEN,YELLOW,BLUE,MAGENTA,CYAN,WHITE,DEFAULT};
 const ansiColor PURPLE=MAGENTA;
 const string ANSITXT[9]={ANSIESC+"30m",ANSIESC+"31m",ANSIESC+"32m",ANSIESC+"33m",ANSIESC+"34m",ANSIESC+"35m",ANSIESC+"36m",ANSIESC+"37m",ANSIESC+"39m"};
 const string ANSIBKG[9]={ANSIESC+"40m",ANSIESC+"41m",ANSIESC+"42m",ANSIESC+"43m",ANSIESC+"44m",ANSIESC+"45m",ANSIESC+"46m",ANSIESC+"47m",ANSIESC+"49m"};
-
 /*
  * These are generic string functions,
  * they're here because mlstring needs them 
@@ -215,8 +214,6 @@ string niceDeci(double n){
     if(tmp[0]=='.'){tmp.insert(tmp.begin(),'0');}
     return tmp;
 }
-
-
 
 
 

@@ -7,7 +7,8 @@
 using namespace std;
 #define uint unsigned int
 
-#include "Debugging.h"
+const string LEFTVECBRACE = "\u27E8";
+const string RIGHTVECBRACE= "\u27E9";
 
 struct Vec{ //Mathematical vector
     uint Dimension;
@@ -67,7 +68,13 @@ struct Vec{ //Mathematical vector
     operator vector<double>() {
         return coords;
     }
-    
+    Vec& normalize(){
+        double len = norm();
+        for(int i = 0; i < Dimension; i++){
+            coords[i] /= len;
+        }
+        return *this;
+    }
     //maths
     double& operator[] (const uint n){
         return coords.at(n);
@@ -132,7 +139,15 @@ struct Vec{ //Mathematical vector
             sum+=coords.at(i)*v[i];
         }
         return sum;
-    }        
+    }
+    Vec cross(Vec v){
+        _checkDim(v);
+        return {
+            (coords.at(2) * v[3]) - (coords.at(3) * v[2]),
+            (coords.at(3) * v[1]) - (coords.at(1) * v[3]),
+            (coords.at(1) * v[2]) - (coords.at(2) * v[1])
+        };
+    }
     //geometry
     double distSquared(Vec& v){
         return ((*this)-v).normSquared();
@@ -156,19 +171,38 @@ struct Vec{ //Mathematical vector
         return acos(dot(v) / (norm() * v.norm()));
     }
     
-    string toString(string space=""){
-        string ret = space+"\u3008";
+    string toString(string tag=""){
+        string ret = tag+LEFTVECBRACE;
+        string s;
         for(int i = 0; i < Dimension; i++){
-            ret+=to_string(coords.at(i));
+            s=to_string(((int)(coords.at(i)*100)));
+            s.insert(s.end()-2,'.');
+            ret+=s;
             if(i+1 < Dimension){
                 ret += ",";
             }
         }
-        return ret + "\u3009";
+        return ret + RIGHTVECBRACE;
     }
 };
 Vec operator* (double n, Vec v){
     return v*n;
+}
+double dot(Vec a, Vec b){
+    a._checkDim(b);
+    double sum = 0;
+    for(uint i = 0; i < a.Dimension; i++){
+        sum+=a.coords.at(i)*b[i];
+    }
+    return sum;
+}
+Vec cross(Vec a, Vec b){
+    a._checkDim(b);
+    return {
+        (a[2] * b[3]) - (a[3] * b[2]),
+        (a[3] * b[1]) - (a[1] * b[3]),
+        (a[1] * b[2]) - (a[2] * b[1])
+    };
 }
 
 struct coordPlane{

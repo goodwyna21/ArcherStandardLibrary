@@ -154,6 +154,10 @@ struct Table{
             set(x,rows-1,row.at(x-1));
         }
     }
+    void add(initializer_list<string> row){
+        vector<string> line = row;
+        add(line);
+    }
     void add(size_t cnt, string row[]){
         vector<string> line;
         for(int i = 0; i < cnt; i++){

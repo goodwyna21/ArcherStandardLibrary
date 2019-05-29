@@ -21,6 +21,7 @@ int sum(vector<int> v){
 size_t sum(vector<size_t> v){
     size_t tot=0; for(int i=0;i<v.size();i++){tot+=v.at(i);}return tot;}
 
+
 /*
  * Vector string functions
  * most of these convert a type of vector to a string or vector of strings

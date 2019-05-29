@@ -3,6 +3,7 @@
 
 #include "Table.h"
 #include "Maths.h"
+#include "Debugging.h"
 
 #endif /* ALL_H */
 
