@@ -4,7 +4,17 @@
 #include <iostream>
 using namespace std;
 /*
- * Breakpoints for debugging
+Provides breakpoint functions, useful for finding errors in code.
+A breakpoint clearly outputs a message or variable if supplied,
+then waits for the user to press enter. In my experience these
+are more convenient and more effective than simply
+'cout<<"Here\n"' because many times segmentation
+faults can occur 'out-of-order' and can fail at
+unpredictable points during execution, but waiting for input
+seems to eliminate this problem, allowing you to easily find the
+portion of code responsible. Each time a breakpoint is called it
+increments a counter, so you can follow execution even without
+providing a message.
  */
 
 struct bkpnts{

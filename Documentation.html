@@ -10,22 +10,41 @@
         <pre>
 <h2 style="display:inline">Include Structure:</h2>
 +---------------------------------------------------------------+
-|                 (All.h) <font color="red">-&gt;</font> <a href="Docs/Debugging.html">(Debugging.h)</a> <font color="red">-&gt;</font> &lt;stdio.h&gt;         |
-[<font color="red">                 /     \                                       </font>]
-|         <a href="Docs/Maths.html">(Maths.h)</a>     <a href="Docs/Table.html">(Table.h)</a>                               |
+|                      <a href="Docs/All.html">(All.h)</a> <font color="red">-&gt;</font> <a href="Docs/Debugging.html">(Debugging.h)</a> <font color="red">-&gt;</font> &lt;stdio.h&gt;    |
+[<font color="red">                          \                                    </font>]
+|                       <a href="Docs/Table.html">(Table.h)</a> <font color="red">-&gt;</font> &lt;iostream&gt;                 |
 [<font color="red">                       /       \                               </font>]
-|               <a href="Docs/Getch.html">(Getch.h)</a>       <a href="Docs/Strings.html">(Strings.h)</a>                     |
-[<font color="red">                   /                \                          </font>]
+|                 <a href="Docs/Getch.html">(Getch.h)</a>   <a href="Docs/Strings.html">(Strings.h)</a>                       |
+[<font color="red">                    /               \                          </font>]
 |&lt;sstream&gt; <font color="red">&lt;-</font> <a href="Docs/Exceptions.html">(Exceptions.h)</a>  <a href="Docs/DataStructures.html">(DataStructures.h)</a>                |
-[<font color="red">             /               /                \                </font>]
-|        &lt;termio.h</a>&gt;     <a href="Docs/HashTable.html">(HashTable.h)</a>     <a href="Docs/BinaryTree.html">(BinaryTree.h)</a>        |
-[<font color="red">                       /           \            \              </font>]
-|                 &lt;algorithm&gt;    &lt;string&gt;     <a href="Docs/Vectors.html">(Vectors.h)</a>       |
-[<font color="red">                                                  \            </font>]
-|                     &lt;initializer_list&gt; <font color="red">&lt;-</font> <a href="Docs/coordGeometry.html">(coordGeometry.h)</a>   |
-[<font color="red">                                           /               \   </font>]
-|                                       &lt;vector&gt;         &lt;cmath&gt;|
+[<font color="red">                /              /          \                    </font>]
+|          &lt;termio.h&gt;   <a href="Docs/HashTable.html">(HashTable.h)</a>   <a href="Docs/BinaryTree.html">(BinaryTree.h)</a>          |
+[<font color="red">                        /        \           \                 </font>]
+|                &lt;algorithm&gt;    &lt;string&gt;   <a href="Docs/Vectors.html">(Vectors.h)</a>          |
+[<font color="red">                                                \              </font>]
+|                   &lt;initializer_list&gt; <font color="red">&lt;-</font> <a href="Docs/coordGeometry.html">(coordGeometry.h)</a>     |
+[<font color="red">                                         /               \     </font>]
+|                                     &lt;vector&gt;         &lt;cmath&gt;  |
 +---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+|                      <a href="Docs/All.html">(All.h)</a> <font color="red">-&gt;</font> <a href="Docs/Debugging.html">(Debugging.h)</a> <font color="red">-&gt;</font> &lt;stdio.h&gt;    |
+[<font color="red">                          \                                    </font>]
+|                       <a href="Docs/Table.html">(Table.h)</a> <font color="red">-&gt;</font> &lt;iostream&gt;                 |
+[<font color="red">                       /       \                               </font>]
+|                 <a href="Docs/Getch.html">(Getch.h)</a>   <a href="Docs/Strings.html">(Strings.h)</a>                       |
+[<font color="red">                    /               \                          </font>]
+|&lt;sstream&gt; <font color="red">&lt;-</font> <a href="Docs/Exceptions.html">(Exceptions.h)</a>  <a href="Docs/DataStructures.html">(DataStructures.h)</a>                |
+[<font color="red">                /              /          \                    </font>]
+|          &lt;termio.h&gt;   <a href="Docs/HashTable.html">(HashTable.h)</a>   <a href="Docs/BinaryTree.html">(BinaryTree.h)</a>          |
+[<font color="red">                        /        \           \                 </font>]
+|                &lt;algorithm&gt;    &lt;string&gt;   <a href="Docs/Vectors.html">(Vectors.h)</a>          |
+[<font color="red">                                                \              </font>]
+|                   &lt;initializer_list&gt; <font color="red">&lt;-</font> <a href="Docs/coordGeometry.html">(coordGeometry.h)</a>     |
+[<font color="red">                                         /               \     </font>]
+|                                     &lt;vector&gt;          &lt;cmath&gt; |
++---------------------------------------------------------------+
+
 
 Including the same file twice will give you a linker error, so be
 careful to not include any file below another you've already

@@ -5,6 +5,13 @@
 #include "Vectors.h"
 using namespace std;
 
+/*
+Provides a binary search tree struct which can store and quickly
+search elements. A binary tree is very quick at checking if it
+contains a certain value, making it useful for many applications.
+Notably any duplicate elements are discarded.
+*/
+
 template <typename T>
 struct treeNode{
     T val;

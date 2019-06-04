@@ -5,6 +5,10 @@
 #include <sstream>
 using namespace std;
 
+/*
+Provides a compact class for throwing custom runtime errors.
+*/
+
 //Use like: throw runtime_error(ErrForm() << "oopsie " << var >> ErrForm::to_str);
 struct ErrForm{
     stringstream stream_;

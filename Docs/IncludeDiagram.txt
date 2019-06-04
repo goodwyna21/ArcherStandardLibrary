@@ -1,17 +1,17 @@
 +---------------------------------------------------------------+
-|                 (All.h) -> (Debugging.h) -> <stdio.h>         |
-[                 /     \                                       ]
-|         (Maths.h)     (Table.h) -> <iostream>                 |
+|                      (All.h) -> (Debugging.h) -> <stdio.h>    |
+[                          \                                    ]
+|                       (Table.h) -> <iostream>                 |
 [                       /       \                               ]
-|               (Getch.h)       (Strings.h)                     |
-[                   /                \                          ]
+|                 (Getch.h)   (Strings.h)                       |
+[                    /               \                          ]
 |<sstream> <- (Exceptions.h)  (DataStructures.h)                |
-[             /               /                \                ]
-|       <termio.h>      (HashTable.h)     (BinaryTree.h)        |
-[                       /           \            \              ]
-|                 <algorithm>    <string>     (Vectors.h)       |
-[                                                  \            ]
-|                     <initializer_list> <- (coordGeometry.h)   |
-[                                           /               \   ]
-|                                       <vector>         <cmath>|
+[                /              /          \                    ]
+|          <termio.h>   (HashTable.h)   (BinaryTree.h)          |
+[                        /        \           \                 ]
+|                <algorithm>    <string>   (Vectors.h)          |
+[                                                \              ]
+|                   <initializer_list> <- (coordGeometry.h)     |
+[                                         /               \     ]
+|                                     <vector>          <cmath> |
 +---------------------------------------------------------------+

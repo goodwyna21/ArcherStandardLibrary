@@ -4,6 +4,10 @@
 #include "coordGeometry.h"
 using namespace std;
 
+/*
+Provides miscellaneous vector functions
+ */
+
 template <typename T>
 size_t find(vector<T> vec, T elem){
     typename vector<T>::iterator it = find(vec.begin(),vec.end(),elem);

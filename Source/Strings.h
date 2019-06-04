@@ -1,7 +1,14 @@
 #ifndef STRINGS_H
 #define STRINGS_H
 
-#include "DataStructures.h"
+#include "Images.h"
+
+/*
+Provides generic functions for handling strings and converting
+other types to strings.
+Also contains the mlstring (multi-line string) struct, which is
+used for operating on large strings.
+*/
 
 using namespace std;
 

@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../../Source/Image.h</itemPath>
+      <itemPath>SourceFolder/Images.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -61,8 +61,6 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="../../Source/Image.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../../Source/libraryMain.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SourceFolder/BinaryTree.h" ex="false" tool="3" flavor2="0">
@@ -76,6 +74,8 @@
       <item path="SourceFolder/Getch.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SourceFolder/HashTable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SourceFolder/Images.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SourceFolder/Maths.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -112,8 +112,6 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="../../Source/Image.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../../Source/libraryMain.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SourceFolder/BinaryTree.h" ex="false" tool="3" flavor2="0">
@@ -127,6 +125,8 @@
       <item path="SourceFolder/Getch.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SourceFolder/HashTable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SourceFolder/Images.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SourceFolder/Maths.h" ex="false" tool="3" flavor2="0">
       </item>

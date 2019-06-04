@@ -5,8 +5,13 @@
 #include <cmath>
 #include <initializer_list>
 using namespace std;
-#define uint unsigned int
 
+/*
+Provides 'Vec' (vector) and 'coordPlane' classes for use in
+coordinate geometry.
+ */
+
+#define uint unsigned int
 const string LEFTVECBRACE = "\u27E8";
 const string RIGHTVECBRACE= "\u27E9";
 

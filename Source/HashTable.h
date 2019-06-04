@@ -5,6 +5,23 @@
 #include <string>
 using namespace std;
 
+/*
+Provides a hash table struct which can store any number of
+elements indexed by a type with a defined hashing function
+(usually the index type is string). Hash tables theoretically
+have an O(1) lookup time, compared to an array with complexity
+O(n). They will not become slower the more elements are stored
+inside of a table.
+
+Unfortunately my implementation is not optimal and cannot be
+resized, meaning eventually there will be stacks of elements in
+the table and it will begin to slow down. I'm planning on adding
+this soon, but for now the best approach is to initialize the
+table with a sufficiently large size, however this does mean
+more memory is used. I'm sure you can easily find or create a
+better implementation if you need optimal speed and memory usage.
+ */
+
 template <class KeyT,class ValT>
 struct HashNode{
     static HashNode<KeyT,ValT> * genNode(){
@@ -74,20 +91,23 @@ struct HashTable{
             return array[ind]->attach(new HashNode<KeyT,ValT>(key,val));
         }
     }
-    ValT get(KeyT key){
+    ValT& get(KeyT key){
         size_t ind = genIndex(key);
         HashNode<KeyT,ValT> * pos = array[ind];
         if(pos==nullptr){
-            throw "key not present";
+            throw out_of_range("key not present");
         }
         while(pos->id != key){
             if(pos->next!=nullptr){
                 pos = pos->next;
             }else{
-                throw "key not present";
+                throw out_of_range("key not present");
             }
         }
         return pos->val;
+    }
+    ValT& operator[] (KeyT key){
+        return get(key);
     }
     string toString(){
         string ret = "Size: " + to_string(Size) + "\n";

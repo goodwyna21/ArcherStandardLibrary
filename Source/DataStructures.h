@@ -5,6 +5,10 @@
 #include "BinaryTree.h"
 using namespace std;
 
+/*
+Umbrella header for multiple data structures
+ */
+
 template<typename T,size_t size=2>
 struct Tuple{
     T elems[size];

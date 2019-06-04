@@ -2,11 +2,15 @@
 #define TABLE_H
 
 #include "Strings.h"
-#include "Getch.h"
+#include "Exceptions.h"
 
 /*
- * Nicely formatted table for output
+Table.h provides a class for outputting data in a properly
+formatted table, while abstracting away the string handling.
+In addition, Tables can be used as menus from which a user can
+select an item.
  */
+
 struct Table{
     vector<vector<string> > cells;
     string offhlight;
@@ -47,9 +51,11 @@ struct Table{
     Table(ostream& stream,string name="",size_t width=0,size_t height=0,string s=" | "){
         init(stream,name,width,height,s);}
     
+    /*
     Tuple<size_t,2> execMenu(bool showHeaders=false,bool showBorder=true,bool hLight=true){
         size_t x=1,y=1;
         char c=' ';
+        noecho();
         do{
             if(c!=' '){
                 for(int k = 0; k < dispHeight; k++){
@@ -79,8 +85,9 @@ struct Table{
             }
             show(showHeaders,showBorder,hLight,x,y);
         }while((c=getch())!=' '&&c!='\n');
+        echo();
         return Tuple<size_t,2>(x,y);
-    }
+    }*/
     void show(bool showHeaders=false,bool showBorder=true,bool hLight=true,size_t selX=-1,size_t selY=-1){
         (*os) << toString(showHeaders,showBorder,hLight,selX,selY).toString() << "\n";
     }

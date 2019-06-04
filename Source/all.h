@@ -2,8 +2,11 @@
 #define ALL_H
 
 #include "Table.h"
-#include "Maths.h"
 #include "Debugging.h"
+
+/*
+Includes all packages in library
+*/
 
 #endif /* ALL_H */
 

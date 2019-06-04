@@ -1,8 +1,15 @@
 #ifndef GETCH_H
 #define GETCH_H
 
-#include "Exceptions.h"
 
+/*
+Provides a function for capturing unbuffered user input, I.e.
+real-time user input. Each call to getch() will wait until the
+user presses a key, then return that character. That key will not
+be echoed to the terminal, and the cursor will not move.
+*/
+
+/*
 char getch() {
     char buf = 0;
     struct termios old = {0};
@@ -22,6 +29,7 @@ char getch() {
             perror ("tcsetattr ~ICANON");
     return (buf);
 }
+ */
 
 #endif /* GETCH_H */
 

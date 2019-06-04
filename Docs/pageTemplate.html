@@ -1,0 +1,49 @@
+<!-- header -->
+<!DOCTYPE html>
+<html><head><title>$NAME</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head><body>
+        <h1><u>$NAME</u></h1>
+        <a href="../Source/$NAME">Implementation</a><pre>
++---------------------------------------------------------------+
+$BLURB
+<!-- end header -->
+
+<!-- includes -->
+Also includes:
+<a href="$INCLUDEtml">$INCLUDE</a>
+<!-- end includes -->
+
+<!-- constants -->
+<h3 style="display:inline">constants:</h3>
+$CONSTTYPE <b>$CONSTNAME</b>:
+$IND$CONSTBLURB
+<!-- end constants -->
+
+<!-- functions -->
+<h3 style="display:inline">functions:</h3>
+$FUNCTTYPE <b>$FUNCTNAME</b>($FUNCTARGS)
+$IND$FUNCTBLURB
+<!-- end functions -->
+
+<!-- struct -->
+<h2 style="display:inline">struct mlstring:</h2>
+<!-- constructors -->
+$CONSTRUCTORBLURB
+
+<!-- statics -->
+<h3 style="display:inline">Static members:</h3>
+$STATICS
+<!-- end statics -->
+
+<!-- methods -->
+<h3 style="display:inline">Methods:</h3>
+string&amp; <b>at</b>(n)
+    Return reference to line n
+<!-- end methods -->
+<!-- end struct -->
+
+<!-- footer -->
+<a href="../Documentation.html">Contents</a></pre></body></html>
+<!-- end footer -->
