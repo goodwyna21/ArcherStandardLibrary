@@ -6,6 +6,7 @@
 #include <string>
 #include <exception>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 #endif

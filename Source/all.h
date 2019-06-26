@@ -1,7 +1,9 @@
 #ifndef ALL_H
 #define ALL_H
 
-#include "Table.h"
+#include "DataStructures.h"
+#include "Math.h"
+#include "Outputs.h"
 
 /*
 Includes all packages in library

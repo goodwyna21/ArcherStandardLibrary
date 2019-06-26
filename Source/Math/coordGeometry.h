@@ -29,7 +29,7 @@ struct Vec{ //Mathematical vector
 
     void _checkDim(Vec v){
         if(v.Dimension!=Dimension)
-            throw exception(string("Error: Invalid operation between different dimension vectors"));
+            throw "Error: Invalid operation between different dimension vectors";
     }
     ~Vec(){}
     Vec(){}
@@ -223,7 +223,7 @@ struct coordPlane{
         if(O.Dimension!=3 ||
            J.Dimension!=3 ||
            K.Dimension!=3){
-             throw exception(string("Error: vectors must be 2 dimensional"));
+             throw "Error: vectors must be 2 dimensional";}
         origin=O;
         j = J;
         k = K;
@@ -232,8 +232,9 @@ struct coordPlane{
 
     void _checkTwoD(Vec v){
         if(v.Dimension!=2){
-          throw exception(string("Error: Invalid operation between different dimension vectors"));
-
+          throw "Error: Invalid operation between different dimension vectors";
+        }
+    }
     Vec toRealSpace(Vec v){
         _checkTwoD(v);
         return ((j*v[0])+(k*v[1])+origin);

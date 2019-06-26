@@ -41,7 +41,6 @@ struct Table{
         sep=s;
         rows=0;
         cols=1;
-        os = &stream;
         addRows(height+1);
         cols=0;
         addCols(width+1);
@@ -49,7 +48,7 @@ struct Table{
     Table(string name="",size_t width=0,size_t height=0,string s=" | "){
         init(name,width,height,s);}
     void show (bool showHeaders=false,bool showBorder=true,bool hLight=true,int selX=-1,int selY=-1){
-        cout << toString(showHeaders,showBorder,hLight,selX,selY) << "\n";
+        cout << toString(showHeaders,showBorder,hLight,selX,selY).toString() << "\n";
     }
     mlstring toString(bool showHeaders=false,bool showBorder=true,bool hLight=true,int selX=-1,int selY=-1){
         string tmp;
@@ -149,7 +148,7 @@ struct Table{
         return get(x,y);
     }
     void clear(){
-        init(*os);
+        init();
     }
     void operator= (Table t){
         cells = t.cells;
