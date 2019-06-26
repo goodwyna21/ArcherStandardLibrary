@@ -7,9 +7,11 @@
 #include <bitset>
 #include <vector>
 #include <string>
+#include <cmath>
 using namespace std;
 
 //constants
 #define byte unsigned char
+#define uint unsigned int
 
 #endif
