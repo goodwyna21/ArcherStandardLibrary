@@ -1,0 +1,80 @@
+In file included from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\all.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:1:
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h: In member function 'void Vec::_checkDim(Vec)':
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:32:99: error: no matching function for call to 'std::exception::exception(std::__cxx11::string)'
+             throw exception(string("Error: Invalid operation between different dimension vectors"));
+                                                                                                   ^
+In file included from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\exception:38,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\new:40,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\ext\new_allocator.h:33,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\mingw32\bits\c++allocator.h:33,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\allocator.h:46,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\vector:61,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/_Header.h:5,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/Maths.h:7,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:8,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\all.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:1:
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:63:5: note: candidate: 'std::exception::exception()'
+     exception() _GLIBCXX_USE_NOEXCEPT { }
+     ^~~~~~~~~
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:63:5: note:   candidate expects 0 arguments, 1 provided
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:60:9: note: candidate: 'constexpr std::exception::exception(const std::exception&)'
+   class exception
+         ^~~~~~~~~
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:60:9: note:   no known conversion for argument 1 from 'std::__cxx11::string' {aka 'std::__cxx11::basic_string<char>'} to 'const std::exception&'
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp: At global scope:
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:5:1: error: expected '}' at end of input
+ }
+ ^
+In file included from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\all.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:1:
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:209:18: note: to match this '{'
+ struct coordPlane{
+                  ^
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h: In constructor 'coordPlane::coordPlane(Vec, Vec, Vec, std::__cxx11::string)':
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:226:76: error: no matching function for call to 'std::exception::exception(std::__cxx11::string)'
+              throw exception(string("Error: vectors must be 2 dimensional"));
+                                                                            ^
+In file included from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\exception:38,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\new:40,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\ext\new_allocator.h:33,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\mingw32\bits\c++allocator.h:33,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\allocator.h:46,
+                 from c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\vector:61,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/_Header.h:5,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/Maths.h:7,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:8,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\all.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:1:
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:63:5: note: candidate: 'std::exception::exception()'
+     exception() _GLIBCXX_USE_NOEXCEPT { }
+     ^~~~~~~~~
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:63:5: note:   candidate expects 0 arguments, 1 provided
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:60:9: note: candidate: 'constexpr std::exception::exception(const std::exception&)'
+   class exception
+         ^~~~~~~~~
+c:\mingw\lib\gcc\mingw32\8.2.0\include\c++\bits\exception.h:60:9: note:   no known conversion for argument 1 from 'std::__cxx11::string' {aka 'std::__cxx11::basic_string<char>'} to 'const std::exception&'
+In file included from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\all.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:1:
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:233:27: error: a function-definition is not allowed here before '{' token
+     void _checkTwoD(Vec v){
+                           ^
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:5:1: error: expected '}' at end of input
+ }
+ ^
+In file included from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\all.h:4,
+                 from C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:1:
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\Math/coordGeometry.h:222:49: note: to match this '{'
+     coordPlane(Vec O, Vec J, Vec K, string s=""){
+                                                 ^
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp: At global scope:
+C:\Users\gokat\Documents\Projects\c++\ArcherStandardRepo\Source\libraryTest.cpp:5:1: error: expected unqualified-id at end of input
+ }
+ ^

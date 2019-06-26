@@ -15,3 +15,12 @@
 [                                         /               \     ]
 |                                     <vector>          <cmath> |
 +---------------------------------------------------------------+
+
+                    (all.h)
+                        \
+                     (Table.h)
+                     /       \
+            (Strings.h)     (Debugging.h)
+                 \
+            (Images.h) -> <bitset> &
+                                   <fstream>
