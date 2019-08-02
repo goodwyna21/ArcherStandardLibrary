@@ -2,7 +2,7 @@
 #define IMAGES_H
 
 //includes
-#include "Font.h"
+#include "Debugging.h"
 using namespace std;
 
 double _compress(double val, double inMin, double inMax, double outMin, double outMax){
@@ -59,7 +59,7 @@ struct Image{
         return pixels[x][y];
     }
     void set(uint x, uint y, Color c){
-        if(x > 0 && x < width && y > 0 && y < height){
+        if(x >= 0 && x < width && y >= 0 && y < height){
             pixels[x][y] = c;
         }
     }

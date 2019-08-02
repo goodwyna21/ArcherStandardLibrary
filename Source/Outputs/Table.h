@@ -79,7 +79,10 @@ struct Table{
             ret.lines.push_back(line);
             line="";
         }
-        dispWidth = sum(widths)+cols+(psize(sep)*(cols-1));
+        dispWidth = cols+(psize(sep)*(cols-1));
+        for(int i = 0; i < widths.size(); i++){
+            dispWidth += widths[i];
+        }
         dispHeight= rows+(title!=""?2:0);
         if(showBorder){
             ret = addBorder(ret,(title+((selX!=-1)?" ("+to_string(selX)+","+to_string(selY)+")":"")));
@@ -141,10 +144,10 @@ struct Table{
     void add(string a, size_t b){
         add(a,to_string(b));}
 
-    string get(size_t x, size_t y){
+    string& get(size_t x, size_t y){
         return cells.at(y).at(x);
     }
-    string operator()(size_t x, size_t y){
+    string& operator()(size_t x, size_t y){
         return get(x,y);
     }
     void clear(){
